@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+@font-face {
+  font-family: 'aircruizer'; /* Nome que você vai usar */
+  src: url('assets/aircruiser.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+
+}
+body{
+    background: #000080 ;
+    background: linear-gradient(0deg,rgba(0, 0, 128, 1) 46%, rgba(89, 152, 240, 1) 100%) fixed;
+    
+}
+header{
+    width: 100%;
+    margin: auto auto;
+    height: 80px;
+    background: #1b57cf;
+    padding: 20px 0 0 0;
+    /*box-shadow:  2px 1px 10px rgba(233, 6, 6, 0.5);*/
+    position: fixed;
+    top:0;
+}
+
+nav{
+    display: inline-block;
+    width: 40%;
+    margin: auto ;
+    text-align: right;
+    
+}
+
+
+
+.link-logo{
+    font-family: 'aircruizer', sans-serif;
+    font-size: 28px;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    width: 50%;
+    color: aliceblue;
+}
+.link-logo:hover{
+    color: #0047AB;
+}
+
+.link-header{
+    margin-right: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    color: aliceblue;
+}
+
+.link-header:hover{
+    color:  #0047AB;
+}
+
+
+.div-button{
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    text-align: center; 
+}
+
+
+
+
+
+
+button{
+    background:  #4747D4;
+    width: 200px;
+    height: 60px;
+    color: aliceblue;
+    font-size: 22px;
+    font-weight: bolder;
+    border: none;
+    border-radius: 30px;
+    margin-left: 30px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;  
+}
+
+main{
+    scroll-margin-top:80px;
+    width: 100%;
+    height: 640px;
+    
+    display:block;
+    margin: 150px auto 0;
+
+}
+
+
+h1{
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+    padding-top: 50px;
+    color: aliceblue;
+}
+
+h2{
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+    
+    color: aliceblue;
+}
+
+img{
+    display: block;
+    width: 450px;
+    margin: 0 auto;
+}
+
+.img-item{
+    text-align: center;
+    width: 320px;
+    border: 5px solid #4747D4;
+    border-radius: 30px;
+
+}
+
+a{
+    color: aliceblue;
+    text-decoration: none;
+    text-align: center;
+}
+
+
+.projetos{
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+.itens{
+    display: inline-block;
+    margin: 40px auto;
+    
+    
+}
+
+
+.section-projeto{
+    scroll-margin-top:80px;
+    display:block;
+    height: 640px;
+
+}
+
+footer{
+    
+    height: 40%px;
+    text-align: center;
+    width: 100%;  
+    margin-top: 100px;
+    display: block;
+   
+    
+    
+}
+
+i{
+    color: aliceblue;
+    font-size: 30px;
+    margin-left: 30px;
+    margin: auto;
+}
+
+.rodape>a{
+    display: inline-block;
+    
+    margin-top: 30px; 
+    
+}
+
+.rodape{
+    width: 100%;
+    margin: auto;
+    padding-top: 18px;
+    text-align: center;
+}
+
+@media screen and (max-width:800px) {
+
+    .rodape{
+        padding-top: 0;
+        padding-bottom: 20px;
+    }
+    .link-logo{
+        
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+    }
+    nav{
+        display: none;
+    }
+
+}
+
+
+@media screen and (max-width:500px) {
+
+    header{
+        width: 100%;
+        margin: 0;
+        text-align: center;
+    }
+
+    
+    .link-logo{
+        
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    main{
+        width: 100%;
+    }
+
+    img{
+        text-align: center;
+        width: 80%;
+    }
+
+    .rodape{
+        padding-top: 0;
+        padding-bottom: 20px;
+    }
+    h1{
+        width: 80%;
+        font-size: 28px;
+        margin: 0 auto;
+    }
+
+
+    .div-button{
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    button {
+        margin: 0 auto;
+    }
+
+    h2{
+        width: 80%;
+        font-size: large;
+    }
+
+    h2::before{
+        content: "↓  ";
+        color:coral
+    }
+    h2::after{
+        content: "  ↓";
+        color:coral
+    }
+
+    .section-projeto{
+    scroll-margin-top:100px;
+    
+    }
+
+    .rodape>a{
+        display: block;
+    
+        margin-top: 10px; 
+    
+    }
+
+    footer{
+    
+        height: 60%px;
+        
+        margin-top: 0px;
+        display: block;
+    
+    
+    
+    }
+}
