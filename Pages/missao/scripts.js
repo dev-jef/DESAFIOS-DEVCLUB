@@ -9,7 +9,7 @@ let resultados = document.querySelector(".resultados")
 //resultados.style.display="none";
 
 
-const na ="Z3NrXzEyMzQ1Ng=="
+const GROQ_API_KEY ="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"
 const endereco = "https://api.groq.com/openai/v1/chat/completions";
 
 async function gerarCodigo(){
@@ -18,7 +18,7 @@ async function gerarCodigo(){
     let resposta = await fetch(endereco,{
         method:"POST",
         headers:{
-            "Authorization": `Bearer ${atob(na)}`,
+            "Authorization": `Bearer ${GROQ_API_KEY}`,
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
