@@ -9,7 +9,7 @@ let resultados = document.querySelector(".resultados")
 //resultados.style.display="none";
 
 
-const GROQ_API_KEY ="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"
+const GROQ_API_KEY =""
 const endereco = "https://api.groq.com/openai/v1/chat/completions";
 
 async function gerarCodigo(){
