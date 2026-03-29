@@ -1,5 +1,6 @@
 
-
+const pFrom = document.getElementById('p-from')
+const pTo = document.getElementById('p-to')
 const flagFromImg = document.getElementById('flag-from-img')
 const flagToImg = document.getElementById('flag-to-img')
 const currencyToConvert = document.getElementById('currency-to-convert')
@@ -48,9 +49,9 @@ let lastValueToConvert = document.getElementById('currency-to-convert').value;
 function convertValues() {
 
     const valueInputCurrency = document.getElementById('value-input-currency').value
-    const pFrom = document.getElementById('p-from')
-    const pTo = document.getElementById('p-to')
+    let valueToFormat = 0;
     let typeOfCurrencyFrom = '';
+    let typeOfCurrencyTo = '';
 
     console.log(currencyToConvert)
 
@@ -60,7 +61,7 @@ function convertValues() {
         case 'dollar':
             typeOfCurrencyFrom = 'en-US'
         case 'euro':
-            typeOfCurrencyFrom = 'euro'
+            typeOfCurrencyFrom = 'de-DE'
         case 'bitcoin':
             typeOfCurrencyFrom = 'GBP'
         case 'libra':
@@ -68,41 +69,90 @@ function convertValues() {
         default:
             break;
     }
-       
+
+    switch (currencyToConvert.value) {
+        case 'real':
+            typeOfCurrencyTo = 'pt-BR'
+        case 'dollar':
+            typeOfCurrencyTo = 'en-US'
+        case 'euro':
+            typeOfCurrencyTo = 'de-DE'
+        case 'bitcoin':
+            typeOfCurrencyTo = 'en-US'
+        case 'libra':
+            typeOfCurrencyTo = 'en-GB'
+        default:
+            break;
+    }
+
+
     console.log(`currencyFrom: ${currencyFrom.value} - currencyToConvert: ${currencyToConvert.value} - valueInputCurrency: ${valueInputCurrency}`)
     const convertedValueTo = exchangeValues(valueInputCurrency, currencyFrom.value, currencyToConvert.value)
 
-    switch (currencyToConvert.value) {
+    switch (currencyFrom.value) {
+        case 'real':
+            pFrom.innerText = new Intl.NumberFormat(typeOfCurrencyFrom, { style: 'currency', currency: 'BRL' }).format(valueInputCurrency)
+            break;
         case 'dollar':
-            pTo.innerText = new Intl.NumberFormat(typeOfCurrencyFrom, { style: 'currency', currency: 'USD' }).format(convertedValueTo)
-            pFrom.innerText = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(valueInputCurrency)
-            flagToImg.src = 'assets/estados-unidos 1.svg'
-            alert(`O valor convertido em dólar é: US$ ${convertedValueTo.toFixed(2)}`)
+            pFrom.innerText = new Intl.NumberFormat(typeOfCurrencyFrom, { style: 'currency', currency: 'USD' }).format(valueInputCurrency)
             break;
         case 'euro':
-            pTo.innerText = new Intl.NumberFormat(typeOfCurrencyFrom, { style: 'currency', currency: 'EUR' }).format(convertedValueTo)
-            pFrom.innerText = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(valueInputCurrency)
-            flagToImg.src = 'assets/euro.svg'
-            alert(`O valor convertido em euro é: € ${convertedValueTo.toFixed(2)}`)
-            break;
-        case 'libra':
-            pTo.innerText = new Intl.NumberFormat(typeOfCurrencyFrom, { style: 'currency', currency: 'GBP' }).format(convertedValueTo)
-            pFrom.innerText = new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP' }).format(valueInputCurrency)
-            flagToImg.src = 'assets/libra 1.svg'
-            alert(`O valor convertido em libra é: £ ${convertedValueTo.toFixed(2)}`)
+            pFrom.innerText = new Intl.NumberFormat(typeOfCurrencyFrom, { style: 'currency', currency: 'EUR' }).format(valueInputCurrency)  
             break;
         case 'bitcoin':
-            pTo.innerText = new Intl.NumberFormat(typeOfCurrencyFrom, { style: 'currency', currency: 'BTC' }).format(convertedValueTo)
-            pFrom.innerText = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'BTC' }).format(valueInputCurrency)
+            pFrom.innerText = new Intl.NumberFormat(typeOfCurrencyFrom, { style: 'currency', 
+                                                                    currency: 'BTC' ,
+                                                                    minimumFractionDigits: 2,
+                                                                    maximumFractionDigits: 8}).format(valueInputCurrency)
+            break;
+        case 'libra':
+            pFrom.innerText = new Intl.NumberFormat(typeOfCurrencyFrom, { style: 'currency', currency: 'GBP' }).format(valueInputCurrency)
+            break;  
+        default:
+            alert('Valor de moeda para conversão inválido.')
+            break;
+    }       
+
+
+
+
+
+    switch (currencyToConvert.value) {
+        case 'dollar':
+            valueToFormat = new Intl.NumberFormat(typeOfCurrencyFrom, { style: 'currency', currency: 'USD' }).format(convertedValueTo)
+            pTo.innerText = valueToFormat
+            flagToImg.src = 'assets/estados-unidos 1.svg'
+            alert(`O valor convertido em dólar é: ${valueToFormat}`)
+            break;
+        case 'euro':
+            valueToFormat = new Intl.NumberFormat(typeOfCurrencyFrom, { style: 'currency', currency: 'EUR' }).format(convertedValueTo)
+            pTo.innerText = valueToFormat
+            flagToImg.src = 'assets/euro.svg'
+            alert(`O valor convertido em euro é: ${valueToFormat}`)
+            break;
+        case 'libra':
+            valueToFormat = new Intl.NumberFormat(typeOfCurrencyFrom, { style: 'currency', currency: 'GBP' }).format(convertedValueTo)
+            pTo.innerText = valueToFormat
+            flagToImg.src = 'assets/libra 1.svg'
+            alert(`O valor convertido em libra é: ${valueToFormat}`)
+            break;
+        case 'bitcoin':
+            
+            valueToFormat = new Intl.NumberFormat(typeOfCurrencyFrom, { style: 'currency', 
+                                                                    currency: 'BTC' , 
+                                                                    minimumFractionDigits: 2, 
+                                                                    maximumFractionDigits: 8}).format(convertedValueTo)
+            pTo.innerText = valueToFormat
             flagToImg.src = 'assets/bitcoin.svg'
-            alert(`O valor convertido em bitcoin é: ₿ ${convertedValueTo.toFixed(2)}`)
+            alert(`O valor convertido em bitcoin é:  ${valueToFormat}`)
             break;
 
         case 'real':
-            pTo.innerText = new Intl.NumberFormat(typeOfCurrencyFrom, { style: 'currency', currency: 'BRL' }).format(convertedValueTo)
-            pFrom.innerText = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(valueInputCurrency)
+            valueToFormat = new Intl.NumberFormat(typeOfCurrencyFrom, { style: 'currency', currency: 'BRL' }).format(convertedValueTo)
+            pTo.innerText = valueToFormat
+            
             flagToImg.src = 'assets/brasil 2.svg'
-            alert(`O valor convertido em real é: R$ ${convertedValueTo.toFixed(2)}`)
+            alert(`O valor convertido em real é: ${valueToFormat}`)
             break;
         default:
             alert('Valor de moeda para conversão inválido.')
@@ -197,6 +247,8 @@ currencyFrom.addEventListener('change', (event) => {
 
     console.log(`valor: ${currencyFrom.value}`)
     resetCurrencyOptions(currencyFrom.value, 'currency-to-convert')
+
+    resetParagraphsToandFrom()
 })
 
 currencyToConvert.addEventListener('change', (event) => {
@@ -229,6 +281,12 @@ currencyToConvert.addEventListener('change', (event) => {
 
     console.log(`valor: ${currencyToConvert.value}`)
     resetCurrencyOptions(currencyToConvert.value, 'currency-from')
+
+    resetParagraphsToandFrom()
 })
 
 
+function resetParagraphsToandFrom() {
+    pFrom.innerText = "-"
+    pTo.innerText = "-"
+}
