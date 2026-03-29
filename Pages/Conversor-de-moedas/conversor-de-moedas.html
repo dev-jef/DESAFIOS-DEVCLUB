@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Conversor de Moedas</title>
+</head>
+<body>
+
+
+    <main>
+        <div class="div-logo">
+            <img src="assets/meulogo.gif" alt="logo-conversor-de-moedas" class="img-logo">
+        </div>
+
+        <label for="">
+           <p> Converter <b>de</b></p>
+            <select name="" id="currency-from">
+                <option value="real" selected>R$ Real brasileiro</option>
+                <option value="dollar">US$ Dólar americano</option>
+                <option value="euro">€ Euro</option>
+                <option value="libra">£ Libra esterlina</option>
+                <option value="bitcoin">₿ Bitcoin</option>
+            </select>
+        </label>
+
+        <label for="">
+            <p>Converter <b>para</b></p>
+            <select name="" id="currency-to-convert">
+                <option value="dollar" selected>US$ Dólar americano</option>            
+                <option value="euro">€ Euro</option>
+                <option value="libra">£ Libra esterlina</option>
+                <option value="bitcoin">₿ Bitcoin</option>
+            </select>
+        </label>
+
+        <label for="">
+            <p>Valor</p>
+            <input id="value-input-currency" type="number" placeholder="Digite o valor" before="R$">
+        </label>
+
+        <button id="convert-button">Converter</button>
+
+    
+
+        <section>
+            <div>
+                <img src="assets/brasil 2.svg" alt="bandeira do brasil" class="img-section" id="flag-from-img">
+                <p class="p-descricao">Real</p>
+                <p id="p-from" class="p-valor" >0,00</p>
+                
+            </div>
+            <img src="assets/Vector.svg" alt="seta indicando a conversão">
+            <div>
+                <img src="assets/estados-unidos 1.svg" alt="bandeira dos estados unidos" class="img-section" id="flag-to-img">
+                <p class="p-descricao">Dólar Americano</p>
+                <p id="p-to" class="p-valor" >0,00</p>
+            </div>
+        </section>
+    </main>
+    
+</body>
+<script src="script.js"></script>
+</html>
