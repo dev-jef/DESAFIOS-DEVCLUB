@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="">
+    <link rel="stylesheet" href="style.css">
+    <title>Sortear Números</title>
+</head>
+<body>
+    
+    <img src="assets/0401.gif" class="gif-overlay" alt="">
+    <main>
+        <img src="assets/logo.png" alt="Logo do Sorteador de Números" class="img-logo">
+        <h1  class="info">SORTEADOR DE NÚMERO</h1>
+        <div class="goldline-rectangle">
+            <div class="conteinner-principal">
+                <p class="info">ESCOLHA O INTERVALO DE NÚMEROS QUE DESEJA SORTEAR</p>
+                <div class="range">
+                    <div>
+                        <label class="info" for="input-entre">entre:</label>
+                        <input class="input-number" type="number" id="input-entre" value="1">
+                    </div>
+                    <div>
+                        <label class="info" for="input-e">e:</label>
+                        <input class="input-number" type="number" id="input-e" value="100">
+                    </div>
+                    
+                </div>
+                <button class="button-drawn" id="btn-drawn">SORTEAR</button>
+            </div>
+        </div>
+        <p class="info">
+            <img src="assets/0404.gif" alt="seta indicando numero sorteado" class="img-seta-esq">
+            O número sorteado é:
+            <img src="assets/0404.gif" alt="seta indicando numero sorteado" class="img-seta-dir">
+        </p>
+        <div class="gold-dashed-line">
+            <div class="gold-line-circle">
+                <div class="drawn-number">
+                    <div class="gold-circle">
+                        
+                        <h2 id="p-drawn-number">?</h2>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <dialog id="dialogValor" >
+        <h2>Intervalo Inválido</h2>
+        <p>O número "entre" deve ser menor que o número "e". Por favor, corrija os valores e tente novamente.</p>
+        <button id="close-dialog" onclick="document.getElementById('dialogValor').close()">Fechar</button>
+    </dialog>
+    
+</body>
+
+<script src="script.js"></script>
+</html>
