@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    background-color: black;
+    padding-top: 74px;
+    
+}
+
+.conteinner-buttons{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin:  30px 0;
+    gap: 20px;
+}
+
+.logo{
+    width: 64px;
+    cursor: pointer;
+}
+.logo:hover{
+    opacity: 0.8;
+}
+
+
+header{
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px 10px 20px;
+    background: black;
+    top:0;
+    z-index: 10; 
+}
+    
+
+
+.menu{
+    display: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+nav{
+    display: flex;
+    align-items: center;
+    gap:20px;
+    
+}
+
+a{
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 20px;
+}
+
+a:hover{
+    opacity: 0.8;
+}
+
+.btn-menu{
+    width:60px;
+    height:30px;
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width:100%;
+    height:640px;
+    background: url("./img/backgroundMain.jpg") no-repeat ;
+    background-size: cover;
+    padding: 50px 0px 0 50px;
+    scroll-margin-top:74px;
+
+    
+}
+
+.title-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: baseline;
+    padding: 20px;
+    border-radius: 20px 0 0 20px;
+    background: linear-gradient(-90deg,rgba(120, 120, 120, 0.2) 39%, rgba(33, 33, 33, 1) 100%);
+}
+
+h1{
+    
+    color: aliceblue;
+}
+
+span{
+    color: #79cb15;
+}
+span::after{
+    content: ">";
+}
+span::before{
+    content: "<";
+}
+
+section{
+    width: 100%;
+    height: 1000px;
+    scroll-margin-top:74px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 0px 50px;
+    
+}
+
+.conteinner-buttons{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(0deg,rgba(248, 244, 244, 0) 39%, rgba(32, 28, 21, 0.9) 100%);
+    padding: 20px ;
+    margin-top: 0;
+    width: 100%;
+}
+
+button{
+    background-color: #79cb15;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    width: 200px;
+    height: 60px;
+
+}
+
+button:hover{
+    opacity: 0.8;
+}
+
+.gridProducts{
+    width: 100%;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 30vw 30vw 30vw ;
+    gap: 20px;
+    justify-content: center;
+    animation: fadeIn 0.5s ease forwards;   
+}
+
+.fadeIn{
+    animation: fadeIn 1.5s ease forwards;   
+}
+
+.flexProduct{
+    list-style: none;
+    display: flex;
+    width: 275px;
+    justify-content: center;
+}
+
+li{
+    border: solid 1px;
+    color: #8133ff;
+    border-radius: 5px;
+    padding: 0;
+    margin: 0;
+}
+
+li:hover{
+    opacity: 0.8;
+}
+
+img{
+    width: 100%;
+    height: 80%;
+    border-radius: 5px 0 0;
+    
+}
+
+p{
+    text-align: center;
+    color: aliceblue;
+}
+
+
+.item-price{
+    font-weight: bold;
+    color: #79cb15;
+}
+
+.btnProduct{
+    width: 100%;
+    height: 100%;
+    background: none;   
+}
+
+.btn-confira{
+        margin: 0 auto 100px;         
+}
+
+.btn-confira>a{
+    color: black;
+}
+
+.conteinner-buttons
+{}
+
+
+@media screen and (max-width:430px) {
+
+    main{
+        padding-top: 20px;
+        padding-left: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;    
+    }
+    h1{
+        font-size: 18px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+     button{
+        width: calc((100vw /4)-20px);   
+    }
+
+    .btn-confira{
+        margin: 0 auto 50px;   
+    }
+
+    header{
+        width: 100vw;
+    }
+    nav{
+        display:none
+    }
+
+    .menu{
+        display: flex;
+    }
+
+    section{
+        padding: 10px;
+        
+    }
+
+    .conteinner-buttons{
+        display: grid;
+        grid-template-columns: 35vw 35vw;
+        gap:10px
+        margin: 0;
+    }
+    .conteinner-buttons>button{
+        width: 98%
+    }
+
+    .gridProducts{
+        display: flex;
+        flex-direction: column;
+        gap:10;
+    }
+    
+}
+
+
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(50px); 
+    opacity: 0;
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+    opacity: 1;
+  }
+}
